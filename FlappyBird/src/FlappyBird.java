@@ -10,7 +10,6 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
 
     int frameWidth = 360, frameHeight = 640;
 
-
     Image bgImage, birdImage, lowerPipeImage, upperPipeImage;
 
     Player player;
@@ -22,7 +21,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
     Timer gameLoop, pipesCooldown, collisionTimer, scoreTimer;
     int gravity = 0, score = 0;
 
-    JLabel scoreLabel;
+    JLabel scoreLabel, gameOverLabel;
 
     boolean gameStarted = false, gameOver = false;
 
@@ -41,6 +40,15 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
         scoreLabel.setFont(new Font("Arial", Font.BOLD, 20));
         scoreLabel.setForeground(Color.WHITE);
         add(scoreLabel);
+
+        gameOverLabel = new JLabel("GAME OVER (Press R to restart)");
+        gameOverLabel.setFont(new Font("Arial", Font.BOLD, 20));
+        gameOverLabel.setForeground(Color.RED);
+        gameOverLabel.setHorizontalAlignment(JLabel.CENTER);
+        gameOverLabel.setVerticalAlignment(JLabel.CENTER);
+        gameOverLabel.setVisible(false);
+        add(gameOverLabel);
+
 
         player = new Player(playerStartPosX,playerStartPosY,playerWidth,playerHeight,birdImage);
         pipes = new ArrayList<Pipe>();
@@ -134,6 +142,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
         }
         if(collided){
             gameOver = true;
+            gameOverLabel.setVisible(true);
         }
     }
 
@@ -154,9 +163,9 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
         if (!gameOver) {
             scoreLabel.setText("Score: " + score);
         }
-        else{
-            scoreLabel.setText("Score: " + score + " (GAME OVER)");
-        }
+//        else{
+//            scoreLabel.setText("Score: " + score + " (GAME OVER)");
+//        }
     }
 
     public void resetGame(){
@@ -168,6 +177,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
         gravity = 0;
         player.setVelocityY(0);
         score = 0;
+        gameOverLabel.setVisible(false);
         updateScoreLabel();
     }
 
