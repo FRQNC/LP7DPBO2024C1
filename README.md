@@ -11,3 +11,4 @@ Program mempunyai 5 kelas yaitu App, FlappyBird, FlappyMenu, Pipe, dan Player. K
 Pada saat program pertama dijalankan, program akan membuka sebuah form menu dimana terdapat sebuah tombol untuk memulai game flappy bird. Setelah user menekan tombol tersebut maka user akan masuk ke dalam game, game tidak akan dimulai sebelum user menekan spasi untuk pertama kalinya, dengan menekan spasi maka karakter flappy bird akan bergerak ke atas. Tujuan utama user adalah mendapatkan score sebanyak mungkin, user dapat mendapatkan score apabila flappy bird berhasil melewati celah di antara pipa, sebaliknya game akan berakhir apabila flappy bird mengenai pipa tersebut atau jika flappy bird sampai menyentuh tanah. User dapat menekan R untuk melakukan reset game, baik saat game over ataupun saat game over.
 
 # Dokumentasi
+https://github.com/FRQNC/LP7DPBO2024C1/assets/53359844/46118c40-090f-4571-81f3-3986ca5ac57d
